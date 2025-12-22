@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samachar Daily - Current Affairs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <h1 class="logo">📰 Samachar Daily</h1>
+            <div class="language-switch">
+                <button id="lang-hindi" class="lang-btn active">हिंदी</button>
+                <button id="lang-english" class="lang-btn">English</button>
+            </div>
+        </div>
+        
+        <!-- Navigation Tabs -->
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="today">आज</button>
+            <button class="tab-btn" data-tab="yesterday">कल</button>
+            <button class="tab-btn" data-tab="week">7 दिन</button>
+            <button class="tab-btn" data-tab="national">देश</button>
+            <button class="tab-btn" data-tab="international">विदेश</button>
+            <button class="tab-btn" data-tab="local">स्थानीय</button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Date Selector for 7 days -->
+        <div id="date-selector" class="date-selector" style="display: none;">
+            <button class="date-btn" data-days="0">आज</button>
+            <button class="date-btn" data-days="1">1 दिन पहले</button>
+            <button class="date-btn" data-days="2">2 दिन पहले</button>
+            <button class="date-btn" data-days="3">3 दिन पहले</button>
+            <button class="date-btn" data-days="4">4 दिन पहले</button>
+            <button class="date-btn" data-days="5">5 दिन पहले</button>
+            <button class="date-btn" data-days="6">6 दिन पहले</button>
+        </div>
+
+        <!-- News Container -->
+        <div id="news-container" class="news-container">
+            <div class="loading">
+                <i class="fas fa-newspaper fa-spin"></i>
+                <p>समाचार लोड हो रहे हैं...</p>
+            </div>
+        </div>
+
+        <!-- Source Info -->
+        <div class="sources-info">
+            <h3><i class="fas fa-info-circle"></i> समाचार स्रोत</h3>
+            <p>समाचार विश्वसनीय स्रोतों से प्राप्त किए जाते हैं:</p>
+            <div class="source-badges">
+                <span class="badge">BBC Hindi</span>
+                <span class="badge">NDTV</span>
+                <span class="badge">दैनिक भास्कर</span>
+                <span class="badge">जागरण</span>
+                <span class="badge">प्रभात खबर</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="last-updated">
+            <i class="fas fa-sync-alt"></i>
+            <span id="last-update">अंतिम अपडेट: अभी</span>
+        </div>
+        <div class="footer-links">
+            <button id="refresh-btn" class="footer-btn">
+                <i class="fas fa-redo"></i> ताजा समाचार
+            </button>
+            <button id="bookmark-btn" class="footer-btn">
+                <i class="far fa-bookmark"></i> बुकमार्क
+            </button>
+            <button id="about-btn" class="footer-btn">
+                <i class="fas fa-info"></i> जानकारी
+            </button>
+        </div>
+    </footer>
+
+    <!-- Bookmark Modal -->
+    <div id="bookmark-modal" class="modal">
+        <div class="modal-content">
+            <h2>बुकमार्क किए गए समाचार</h2>
+            <div id="bookmark-list"></div>
+            <button class="close-btn">बंद करें</button>
+        </div>
+    </div>
+
+    <!-- About Modal -->
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <h2>एप्प के बारे में</h2>
+            <p>यह एप्प ताजा समाचार प्रदान करता है।</p>
+            <p>समाचार स्वतः अपडेट होते रहते हैं।</p>
+            <p>भाषा बदलने के लिए ऊपर दिए गए बटन का उपयोग करें।</p>
+            <button class="close-btn">बंद करें</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
