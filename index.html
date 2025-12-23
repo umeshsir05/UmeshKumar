@@ -1,109 +1,119 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samachar Daily - Current Affairs</title>
+    <title>Umesh Kumar - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#2563eb">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-top">
-            <h1 class="logo">📰 Samachar Daily</h1>
-            <div class="language-switch">
-                <button id="lang-hindi" class="lang-btn active">हिंदी</button>
-                <button id="lang-english" class="lang-btn">English</button>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Umesh Kumar</a>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="qualifications.html">Qualifications</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1 class="hero-title">Umesh Kumar</h1>
+                <p class="hero-subtitle">Teacher & Software Developer</p>
+                <p class="hero-description">Seeking a position that will utilize my talent to enhance the growth of the organization.</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn btn-primary">Contact Me</a>
+                    <a href="qualifications.html" class="btn btn-secondary">View Qualifications</a>
+                </div>
+                <div class="hero-contact">
+                    <p><i class="fas fa-envelope"></i> ukbanjare1989@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> 7509873448</p>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Replace placeholder.jpg with your actual photo -->
+                <img src="assets/placeholder.jpg" alt="Umesh Kumar" class="profile-photo">
+                <div class="image-caption">Umesh Kumar</div>
             </div>
         </div>
-        
-        <!-- Navigation Tabs -->
-        <nav class="tabs">
-            <button class="tab-btn active" data-tab="today">आज</button>
-            <button class="tab-btn" data-tab="yesterday">कल</button>
-            <button class="tab-btn" data-tab="week">7 दिन</button>
-            <button class="tab-btn" data-tab="national">देश</button>
-            <button class="tab-btn" data-tab="international">विदेश</button>
-            <button class="tab-btn" data-tab="local">स्थानीय</button>
-        </nav>
-    </header>
+    </section>
 
-    <!-- Main Content -->
-    <main class="container">
-        <!-- Date Selector for 7 days -->
-        <div id="date-selector" class="date-selector" style="display: none;">
-            <button class="date-btn" data-days="0">आज</button>
-            <button class="date-btn" data-days="1">1 दिन पहले</button>
-            <button class="date-btn" data-days="2">2 दिन पहले</button>
-            <button class="date-btn" data-days="3">3 दिन पहले</button>
-            <button class="date-btn" data-days="4">4 दिन पहले</button>
-            <button class="date-btn" data-days="5">5 दिन पहले</button>
-            <button class="date-btn" data-days="6">6 दिन पहले</button>
-        </div>
-
-        <!-- News Container -->
-        <div id="news-container" class="news-container">
-            <div class="loading">
-                <i class="fas fa-newspaper fa-spin"></i>
-                <p>समाचार लोड हो रहे हैं...</p>
+    <!-- Quick Info Section -->
+    <section class="quick-info">
+        <div class="container">
+            <h2 class="section-title">Quick Overview</h2>
+            <div class="info-cards">
+                <div class="info-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Highest Qualification</h3>
+                    <p>MCA (68.42%)</p>
+                    <p>Guru Ghasidas Vishwavidyalaya</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Teaching Experience</h3>
+                    <p>8+ Years</p>
+                    <p>Multiple Educational Institutions</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Technical Skills</h3>
+                    <p>C, C++, Java, Python</p>
+                    <p>Web Development & Databases</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Janjgir-champa, C.G.</p>
+                    <p>India</p>
+                </div>
             </div>
         </div>
-
-        <!-- Source Info -->
-        <div class="sources-info">
-            <h3><i class="fas fa-info-circle"></i> समाचार स्रोत</h3>
-            <p>समाचार विश्वसनीय स्रोतों से प्राप्त किए जाते हैं:</p>
-            <div class="source-badges">
-                <span class="badge">BBC Hindi</span>
-                <span class="badge">NDTV</span>
-                <span class="badge">दैनिक भास्कर</span>
-                <span class="badge">जागरण</span>
-                <span class="badge">प्रभात खबर</span>
-            </div>
-        </div>
-    </main>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="last-updated">
-            <i class="fas fa-sync-alt"></i>
-            <span id="last-update">अंतिम अपडेट: अभी</span>
-        </div>
-        <div class="footer-links">
-            <button id="refresh-btn" class="footer-btn">
-                <i class="fas fa-redo"></i> ताजा समाचार
-            </button>
-            <button id="bookmark-btn" class="footer-btn">
-                <i class="far fa-bookmark"></i> बुकमार्क
-            </button>
-            <button id="about-btn" class="footer-btn">
-                <i class="fas fa-info"></i> जानकारी
-            </button>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Umesh Kumar</h3>
+                    <p>Teacher & Software Developer</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="qualifications.html">Qualifications</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> ukbanjare1989@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> 7509873448</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Kosir, Pamgarh, Janjgir-champa, C.G.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Umesh Kumar. All rights reserved.</p>
+                <p>Portfolio: <a href="https://umeshshr05.github.io/umesh-sir/" target="_blank">umeshshr05.github.io/umesh-sir/</a></p>
+            </div>
         </div>
     </footer>
-
-    <!-- Bookmark Modal -->
-    <div id="bookmark-modal" class="modal">
-        <div class="modal-content">
-            <h2>बुकमार्क किए गए समाचार</h2>
-            <div id="bookmark-list"></div>
-            <button class="close-btn">बंद करें</button>
-        </div>
-    </div>
-
-    <!-- About Modal -->
-    <div id="about-modal" class="modal">
-        <div class="modal-content">
-            <h2>एप्प के बारे में</h2>
-            <p>यह एप्प ताजा समाचार प्रदान करता है।</p>
-            <p>समाचार स्वतः अपडेट होते रहते हैं।</p>
-            <p>भाषा बदलने के लिए ऊपर दिए गए बटन का उपयोग करें।</p>
-            <button class="close-btn">बंद करें</button>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
