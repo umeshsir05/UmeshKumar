@@ -1,150 +1,93 @@
 // Mobile Navigation Toggle
-const menuToggle = document.getElementById('menuToggle');
-const navMenu = document.getElementById('navMenu');
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
 
-if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        menuToggle.innerHTML = navMenu.classList.contains('active') 
-            ? '<i class="fas fa-times"></i>' 
-            : '<i class="fas fa-bars"></i>';
-    });
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
 
-    // Close menu when clicking on a link
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        });
-    });
-}
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+}));
 
-// Contact Form Submission
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const subject = formData.get('subject');
-        const message = formData.get('message');
-        
-        // Simple validation
-        if (!name || !email || !subject || !message) {
-            showFormMessage('Please fill in all required fields.', 'error');
-            return;
-        }
-        
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            showFormMessage('Please enter a valid email address.', 'error');
-            return;
-        }
-        
-        // In a real application, you would send the form data to a server here
-        // For this example, we'll just show a success message
-        
-        // Show success message
-        showFormMessage('Thank you for your message! I will get back to you soon.', 'success');
-        
-        // Reset form
-        contactForm.reset();
-        
-        // In a real application, you would send the form data to a server
-        // Example using fetch API:
-        /*
-        fetch('your-server-endpoint', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                name: name,
-                email: email,
-                phone: formData.get('phone'),
-                subject: subject,
-                message: message
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            showFormMessage('Thank you for your message! I will get back to you soon.', 'success');
-            contactForm.reset();
-        })
-        .catch(error => {
-            showFormMessage('There was an error sending your message. Please try again.', 'error');
-        });
-        */
-    });
-}
+// Active link highlighting based on scroll position
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link');
 
-// Function to show form message
-function showFormMessage(message, type) {
-    const formMessage = document.getElementById('formMessage');
-    if (formMessage) {
-        formMessage.textContent = message;
-        formMessage.className = 'form-message ' + type;
-        
-        // Hide message after 5 seconds
-        setTimeout(() => {
-            formMessage.textContent = '';
-            formMessage.className = 'form-message';
-        }, 5000);
-    }
-}
-
-// Animate skill bars when they come into view
-const skillBars = document.querySelectorAll('.skill-level');
-if (skillBars.length > 0) {
-    // Create an intersection observer
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const skillBar = entry.target;
-                // The width is already set inline in the HTML
-                // We just add a class to trigger the animation
-                skillBar.classList.add('animated');
-                observer.unobserve(skillBar);
-            }
-        });
-    }, {
-        threshold: 0.5 // Trigger when 50% of the element is visible
-    });
+window.addEventListener('scroll', () => {
+    let current = '';
     
-    // Observe each skill bar
-    skillBars.forEach(bar => {
-        observer.observe(bar);
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (scrollY >= (sectionTop - 200)) {
+            current = section.getAttribute('id');
+        }
     });
-}
-
-// Set current year in footer
-document.addEventListener('DOMContentLoaded', function() {
-    const currentYear = new Date().getFullYear();
-    const yearElements = document.querySelectorAll('.current-year');
-    yearElements.forEach(element => {
-        element.textContent = currentYear;
-    });
-    
-    // Add active class to current page in navigation
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-menu a');
     
     navLinks.forEach(link => {
-        const linkHref = link.getAttribute('href');
-        if (linkHref === currentPage) {
-            link.classList.add('active');
-        } else if (currentPage === '' && linkHref === 'index.html') {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
             link.classList.add('active');
         }
     });
 });
 
-// Add smooth scrolling for anchor links
+// Animate skill bars when they come into view
+const skillBars = document.querySelectorAll('.skill-progress');
+const skillsSection = document.getElementById('skills');
+
+function animateSkillBars() {
+    skillBars.forEach(skillBar => {
+        const width = skillBar.style.width;
+        skillBar.style.width = '0';
+        
+        setTimeout(() => {
+            skillBar.style.width = width;
+        }, 100);
+    });
+}
+
+// Use Intersection Observer to trigger skill bar animation
+const observerOptions = {
+    threshold: 0.5
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateSkillBars();
+        }
+    });
+}, observerOptions);
+
+observer.observe(skillsSection);
+
+// Contact form submission
+const contactForm = document.getElementById('contactForm');
+
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Get form values
+    const name = contactForm.querySelector('input[type="text"]').value;
+    const email = contactForm.querySelector('input[type="email"]').value;
+    const subject = contactForm.querySelectorAll('input[type="text"]')[1].value;
+    const message = contactForm.querySelector('textarea').value;
+    
+    // In a real application, you would send this data to a server
+    // For demo purposes, we'll just show an alert
+    alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
+    
+    // Reset form
+    contactForm.reset();
+});
+
+// Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -160,4 +103,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
+});
+
+// Initialize skill bars with their widths
+window.addEventListener('DOMContentLoaded', () => {
+    // Set initial active link
+    if (window.location.hash) {
+        const activeLink = document.querySelector(`.nav-link[href="${window.location.hash}"]`);
+        if (activeLink) {
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            activeLink.classList.add('active');
+        }
+    }
 });
