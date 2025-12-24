@@ -3,26 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Education - My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for education page */
+        .education-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+        
+        .education-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .education-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .education-detail-section {
+            padding: 80px 0;
+        }
+        
+        .education-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .education-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #3498db, #9b59b6);
+            border-radius: 2px;
+        }
+        
+        .education-item {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+        
+        .education-item:nth-child(odd) {
+            flex-direction: row;
+        }
+        
+        .education-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .education-icon {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border: 4px solid #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            box-shadow: 0 0 0 8px #f9f9f9;
+        }
+        
+        .education-icon i {
+            font-size: 1.5rem;
+            color: #3498db;
+        }
+        
+        .education-content {
+            width: calc(50% - 60px);
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .education-item:nth-child(odd) .education-content {
+            margin-right: 60px;
+        }
+        
+        .education-item:nth-child(even) .education-content {
+            margin-left: 60px;
+        }
+        
+        .education-year {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .education-degree {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .education-institution {
+            color: #3498db;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .education-institution i {
+            margin-right: 10px;
+        }
+        
+        .education-details {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .education-details h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .detail-item i {
+            color: #3498db;
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        .certifications {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+        }
+        
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .certification-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .certification-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .certification-img {
+            height: 180px;
+            background-color: #3498db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .certification-content {
+            padding: 25px;
+        }
+        
+        .certification-content h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .certification-content p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .certification-issuer {
+            color: #3498db;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .certification-date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .back-to-home {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        /* Responsive styles for education page */
+        @media (max-width: 992px) {
+            .education-timeline::before {
+                left: 30px;
+            }
+            
+            .education-item {
+                flex-direction: row !important;
+                justify-content: flex-start;
+            }
+            
+            .education-icon {
+                left: 30px;
+            }
+            
+            .education-content {
+                width: calc(100% - 90px);
+                margin-left: 90px !important;
+                margin-right: 0 !important;
+            }
+            
+            .education-hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .education-hero {
+                padding: 130px 0 60px;
+            }
+            
+            .education-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .education-content {
+                padding: 20px;
+            }
+            
+            .education-degree {
+                font-size: 1.3rem;
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <header class="header">
         <div class="container">
             <div class="logo">
-                <a href="#">Portfolio<span>.</span></a>
+                <a href="index.html">Portfolio<span>.</span></a>
             </div>
             <nav class="nav">
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="education.html" class="nav-link">Education</a></li>
-                    <li><a href="experience.html" class="nav-link">Experience</a></li>
-                    <li><a href="skills.html" class="nav-link">Skills</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="index.html#home" class="nav-link">Home</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="education.html" class="nav-link active">Education</a></li>
+                    <li><a href="index.html#experience" class="nav-link">Experience</a></li>
+                    <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
                 </ul>
                 <div class="hamburger">
                     <span class="bar"></span>
@@ -33,70 +308,329 @@
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        
-                    <div class="education-grid">
-      <!-- Card 1 -->
-      <div class="education-card">
-        <h3><i class="fa-solid fa-graduation-cap"></i> MCA - Master of Computer Applications</h3>
-        <p><i class="fa-solid fa-university"></i> <strong>University:</strong> GGU(Dept. of CSIT) Bilaspur</p>
-        <p><i class="fa-solid fa-calendar-days"></i> <strong>Year:</strong> 2014</p>
-        <p><i class="fa-solid fa-percent"></i> <strong>Percentage:</strong> 68.42%</p>
-      </div>
+    <!-- Education Hero Section -->
+    <section class="education-hero">
+        <div class="container">
+            <h1>My Education Journey</h1>
+            <p>My academic background, certifications, and continuous learning path in technology and development.</p>
+        </div>
+    </section>
 
-      <!-- Card 2 -->
-      <div class="education-card">
-        <h3><i class="fa-solid fa-user-graduate"></i> BCA - Bachelor of Computer Applications</h3>
-        <p><i class="fa-solid fa-building-columns"></i> <strong>College:</strong> Chaitanya College Pamgarh</p>
-        <p><i class="fa-solid fa-calendar-days"></i> <strong>Year:</strong> 2011</p>
-        <p><i class="fa-solid fa-percent"></i> <strong>Percentage:</strong> 62.63%</p>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="education-card">
-        <h3><i class="fa-solid fa-chalkboard-teacher"></i> DElEd - Diploma in Elementary Education</h3>
-        <p><i class="fa-solid fa-school-flag"></i> <strong>Institution:</strong> DIET Janjgir</p>
-        <p><i class="fa-solid fa-calendar-days"></i> <strong>Year:</strong> 2024</p>
-        <p><i class="fa-solid fa-percent"></i> <strong>Percentage:</strong> 77.38%</p>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="education-card">
-        <h3><i class="fa-solid fa-book-open-reader"></i> 12th - Higher Secondary</h3>
-        <p><i class="fa-solid fa-landmark"></i> <strong>Board:</strong> CGBSE Raipur</p>
-        <p><i class="fa-solid fa-calendar-days"></i> <strong>Year:</strong> 2008</p>
-        <p><i class="fa-solid fa-percent"></i> <strong>Percentage:</strong> 71.60%</p>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="education-card">
-        <h3><i class="fa-solid fa-book"></i> 10th - High School</h3>
-        <p><i class="fa-solid fa-landmark-flag"></i> <strong>Board:</strong> CGBSE Raipur</p>
-        <p><i class="fa-solid fa-calendar-days"></i> <strong>Year:</strong> 2005</p>
-        <p><i class="fa-solid fa-percent"></i> <strong>Percentage:</strong> 64.66%</p>
-      </div>
-    </div>
-  </section>
+    <!-- Education Timeline -->
+    <section class="education-detail-section">
+        <div class="education-container">
+            <h2 class="section-title">Academic Background</h2>
+            <div class="education-timeline">
+                <!-- Education Item 1 -->
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-content">
+                        <span class="education-year">2020 - 2022</span>
+                        <h3 class="education-degree">Master of Science in Computer Science</h3>
+                        <div class="education-institution">
+                            <i class="fas fa-university"></i>
+                            <span>Stanford University, Stanford, CA</span>
+                        </div>
+                        <p>Specialized in Human-Computer Interaction, Machine Learning, and Advanced Web Technologies. Conducted research on improving accessibility in web applications for users with disabilities.</p>
+                        
+                        <div class="education-details">
+                            <h4>Key Details</h4>
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>GPA: 3.9/4.0</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-award"></i>
+                                    <span>Graduated with Honors</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-book"></i>
+                                    <span>Thesis: Web Accessibility</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>HCI Research Group</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                
+                <!-- Education Item 2 -->
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="education-content">
+                        <span class="education-year">2016 - 2020</span>
+                        <h3 class="education-degree">Bachelor of Science in Software Engineering</h3>
+                        <div class="education-institution">
+                            <i class="fas fa-university"></i>
+                            <span>University of California, Berkeley</span>
+                        </div>
+                        <p>Focused on full-stack web development, software architecture, and database management. Served as President of the Web Development Club, organizing workshops and hackathons.</p>
+                        
+                        <div class="education-details">
+                            <h4>Key Details</h4>
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>GPA: 3.8/4.0</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-award"></i>
+                                    <span>Dean's List (All Semesters)</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-trophy"></i>
+                                    <span>Web Dev Club President</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-project-diagram"></i>
+                                    <span>Capstone: E-commerce Platform</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education Item 3 -->
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="education-content">
+                        <span class="education-year">2014 - 2016</span>
+                        <h3 class="education-degree">Associate Degree in Computer Science</h3>
+                        <div class="education-institution">
+                            <i class="fas fa-university"></i>
+                            <span>City College of San Francisco</span>
+                        </div>
+                        <p>Learned fundamentals of programming, data structures, algorithms, and web design. Completed coursework in HTML/CSS, JavaScript, Java, and Database Management Systems.</p>
+                        
+                        <div class="education-details">
+                            <h4>Key Details</h4>
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>GPA: 3.9/4.0</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-award"></i>
+                                    <span>Valedictorian</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-code"></i>
+                                    <span>First Web Development Project</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-medal"></i>
+                                    <span>Academic Excellence Award</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education Item 4 -->
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="education-content">
+                        <span class="education-year">2010 - 2014</span>
+                        <h3 class="education-degree">High School Diploma</h3>
+                        <div class="education-institution">
+                            <i class="fas fa-university"></i>
+                            <span>San Francisco High School</span>
+                        </div>
+                        <p>Completed advanced courses in Mathematics, Physics, and Computer Programming. Founded the school's first Coding Club and participated in regional programming competitions.</p>
+                        
+                        <div class="education-details">
+                            <h4>Key Details</h4>
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>GPA: 4.0/4.0</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-award"></i>
+                                    <span>National Honor Society</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-code"></i>
+                                    <span>Founded Coding Club</span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-trophy"></i>
+                                    <span>Programming Competition Winner</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        
-                        
-                            
-        
-    </main>
+    <!-- Certifications Section -->
+    <section class="certifications">
+        <div class="education-container">
+            <h2 class="section-title">Certifications & Courses</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: #555;">Continuous learning through professional certifications and specialized courses.</p>
+            
+            <div class="certifications-grid">
+                <!-- Certification 1 -->
+                <div class="certification-card">
+                    <div class="certification-img">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>AWS Certified Solutions Architect</h3>
+                        <span class="certification-issuer">Amazon Web Services</span>
+                        <p>Designing and deploying scalable systems on AWS. Covered services like EC2, S3, RDS, Lambda, and CloudFormation.</p>
+                        <span class="certification-date">Issued: June 2022 | Expires: June 2025</span>
+                    </div>
+                </div>
+                
+                <!-- Certification 2 -->
+                <div class="certification-card">
+                    <div class="certification-img" style="background-color: #61dafb;">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>React Advanced Certification</h3>
+                        <span class="certification-issuer">Meta (Facebook Developer Circles)</span>
+                        <p>Advanced React concepts including hooks, context API, performance optimization, and testing with Jest.</p>
+                        <span class="certification-date">Issued: March 2021 | No Expiration</span>
+                    </div>
+                </div>
+                
+                <!-- Certification 3 -->
+                <div class="certification-card">
+                    <div class="certification-img" style="background-color: #333;">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>Google UX Design Professional</h3>
+                        <span class="certification-issuer">Google Career Certificates</span>
+                        <p>User-centered design process, wireframing, prototyping, and conducting UX research. Completed 7-course program.</p>
+                        <span class="certification-date">Issued: January 2021 | No Expiration</span>
+                    </div>
+                </div>
+                
+                <!-- Certification 4 -->
+                <div class="certification-card">
+                    <div class="certification-img" style="background-color: #f0db4f;">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>JavaScript Algorithms Certification</h3>
+                        <span class="certification-issuer">freeCodeCamp</span>
+                        <p>Mastered JavaScript algorithms, data structures, and functional programming. Completed 300+ hour curriculum.</p>
+                        <span class="certification-date">Issued: November 2020 | No Expiration</span>
+                    </div>
+                </div>
+                
+                <!-- Certification 5 -->
+                <div class="certification-card">
+                    <div class="certification-img" style="background-color: #007acc;">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>Azure Fundamentals</h3>
+                        <span class="certification-issuer">Microsoft</span>
+                        <p>Cloud concepts, Azure services, security, privacy, pricing, and support. Understanding of core Azure services.</p>
+                        <span class="certification-date">Issued: August 2020 | No Expiration</span>
+                    </div>
+                </div>
+                
+                <!-- Certification 6 -->
+                <div class="certification-card">
+                    <div class="certification-img" style="background-color: #68a063;">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>MongoDB Certified Developer</h3>
+                        <span class="certification-issuer">MongoDB University</span>
+                        <p>MongoDB data modeling, indexing, aggregation framework, replication, and application development.</p>
+                        <span class="certification-date">Issued: May 2020 | Expires: May 2023</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Home -->
+    <section class="back-to-home">
+        <div class="container">
+            <a href="index.html" class="btn">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Umesh Banjare . All Rights Reserved.</p>
+            <p>&copy; 2023 Alex Johnson. All Rights Reserved.</p>
             <p>Designed with <i class="fas fa-heart"></i> by Me</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // Active link highlighting
+        const currentPage = window.location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+
+        // Animation for education items on scroll
+        const educationItems = document.querySelectorAll('.education-item');
+        
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const educationObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Set initial styles and observe each education item
+        educationItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            educationObserver.observe(item);
+        });
+    </script>
 </body>
 </html>
