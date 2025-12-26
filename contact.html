@@ -3,68 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Contact | EduPortfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
 </head>
 <body>
     <!-- Navigation -->
-    <header class="header">
-        <div class="container">
+    <nav class="navbar">
+        <div class="nav-container">
             <div class="logo">
-                <a href="#">Portfolio<span>.</span></a>
+                <i class="fas fa-graduation-cap"></i>
+                EduPortfolio
             </div>
-            <nav class="nav">
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="education.html" class="nav-link">Education</a></li>
-                    <li><a href="experience.html" class="nav-link">Experience</a></li>
-                    <li><a href="skills.html" class="nav-link">Skills</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+                    <li><a href="education.html" class="nav-link"><i class="fas fa-book"></i> Education</a></li>
+                    <li><a href="skills.html" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
+                    <li><a href="projects.html" class="nav-link"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                    <li><a href="experience.html" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a></li>
+                    <li><a href="contact.html" class="nav-link active"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Home/Hero Section -->
-        <section id="home" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h3 class="greeting">Hello, I'm</h3>
-                        <h1 class="name">Umesh Banjare</h1>
-                        <h2 class="title">Web Developer & Educator</h2>
-                        <p class="description">I create beautiful, functional websites and applications with a focus on user experience and responsive design.</p>
-                       
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <h2 class="section-title">
+                <i class="fas fa-envelope-open-text"></i>
+                Contact Me
+            </h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 class="contact-subtitle">
+                        <i class="fas fa-address-card"></i>
+                        Get In Touch
+                    </h3>
+                    <div class="contact-details">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h4>Email</h4>
+                                <p>raj.sharma@eduportfolio.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h4>Phone</h4>
+                                <p>+91 98765 43210</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h4>Location</h4>
+                                <p>Delhi, India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h4>University</h4>
+                                <p>Delhi Technological University</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="hero-image">
-                        <img src="ukb.png" alt="Profile Picture">
-
-     <a href="#contact" class="btn">Get In Touch</a>                </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3 class="contact-subtitle">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder="Subject" required>
+                            <i class="fas fa-tag"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                            <i class="fas fa-comment"></i>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
-
-        
-                        
-                            
-        
-    </main>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Umesh Banjare . All Rights Reserved.</p>
-            <p>Designed with <i class="fas fa-heart"></i> by Me</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-graduation-cap"></i>
+                EduPortfolio
+            </div>
+            <p class="footer-text">
+                "Education is the most powerful weapon which you can use to change the world."
+                <br>- Nelson Mandela
+            </p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="education.html">Education</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p class="footer-copyright">
+                © 2024 EduPortfolio. All rights reserved. 
+                Made with <i class="fas fa-heart"></i> by Raj Sharma
+            </p>
         </div>
     </footer>
 
