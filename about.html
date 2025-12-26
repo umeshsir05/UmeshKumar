@@ -3,68 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>About Me | EduPortfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
 </head>
 <body>
-    <!-- Navigation -->
-    <header class="header">
-        <div class="container">
+    <!-- Navigation (Same as index.html) -->
+    <nav class="navbar">
+        <div class="nav-container">
             <div class="logo">
-                <a href="#">Portfolio<span>.</span></a>
+                <i class="fas fa-graduation-cap"></i>
+                EduPortfolio
             </div>
-            <nav class="nav">
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="education.html" class="nav-link">Education</a></li>
-                    <li><a href="experience.html" class="nav-link">Experience</a></li>
-                    <li><a href="skills.html" class="nav-link">Skills</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html" class="nav-link active"><i class="fas fa-user"></i> About</a></li>
+                    <li><a href="education.html" class="nav-link"><i class="fas fa-book"></i> Education</a></li>
+                    <li><a href="skills.html" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
+                    <li><a href="projects.html" class="nav-link"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                    <li><a href="experience.html" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a></li>
+                    <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Home/Hero Section -->
-        <section id="home" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h3 class="greeting">Hello, I'm</h3>
-                        <h1 class="name">Umesh Banjare</h1>
-                        <h2 class="title">Web Developer & Educator</h2>
-                        <p class="description">I create beautiful, functional websites and applications with a focus on user experience and responsive design.</p>
-                       
+    <!-- Main Container -->
+    <div class="container">
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <h2 class="section-title">
+                <i class="fas fa-user-graduate"></i>
+                About Me
+            </h2>
+            <div class="about-content">
+                <div class="about-header">
+                    <div class="profile-image">
+                        <i class="fas fa-user-circle"></i>
                     </div>
-                    <div class="hero-image">
-                        <img src="ukb.png" alt="Profile Picture">
-
-     <a href="#contact" class="btn">Get In Touch</a>                </div>
+                    <div class="profile-info">
+                        <h3>Raj Sharma</h3>
+                        <p class="profile-title">Computer Science Student</p>
+                        <p class="profile-location">
+                            <i class="fas fa-map-marker-alt"></i> Delhi, India
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="about-details-grid">
+                    <div class="detail-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email:</strong>
+                            <span>raj.sharma@eduportfolio.com</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Phone:</strong>
+                            <span>+91 98765 43210</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-university"></i>
+                        <div>
+                            <strong>University:</strong>
+                            <span>Delhi Technological University</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div>
+                            <strong>Graduation:</strong>
+                            <span>May 2025</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-description">
+                    <p>I am a passionate Computer Science student with a keen interest in web development and educational technology. My goal is to create innovative solutions that make learning more accessible and engaging for students worldwide.</p>
+                    <p>Through my academic journey, I have developed strong problem-solving skills and a deep understanding of software development principles. I believe in continuous learning and am always excited to take on new challenges.</p>
+                </div>
+                
+                <div class="achievements">
+                    <h3 class="section-subtitle">
+                        <i class="fas fa-trophy"></i>
+                        Achievements
+                    </h3>
+                    <div class="achievement-list">
+                        <div class="achievement-item">
+                            <h4>Dean's List 2023</h4>
+                            <p>Academic excellence recognition for outstanding performance</p>
+                        </div>
+                        <div class="achievement-item">
+                            <h4>Hackathon Winner</h4>
+                            <p>First prize in National Level Coding Competition</p>
+                        </div>
+                        <div class="achievement-item">
+                            <h4>Research Paper Published</h4>
+                            <p>Published paper on Educational Technology in IEEE Conference</p>
+                        </div>
+                        <div class="achievement-item">
+                            <h4>Google Developer Student Club Lead</h4>
+                            <p>Leading technical community of 500+ students</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+    </div>
 
-        
-                        
-                            
-        
-    </main>
-
-    <!-- Footer -->
+    <!-- Footer (Same as index.html) -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Umesh Banjare . All Rights Reserved.</p>
-            <p>Designed with <i class="fas fa-heart"></i> by Me</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-graduation-cap"></i>
+                EduPortfolio
+            </div>
+            <p class="footer-text">
+                "Education is the most powerful weapon which you can use to change the world."
+                <br>- Nelson Mandela
+            </p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="education.html">Education</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p class="footer-copyright">
+                © 2024 EduPortfolio. All rights reserved. 
+                Made with <i class="fas fa-heart"></i> by Raj Sharma
+            </p>
         </div>
     </footer>
 
