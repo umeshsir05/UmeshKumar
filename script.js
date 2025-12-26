@@ -169,3 +169,104 @@ function typeWriter() {
 
 // Call typing effect when page loads
 window.addEventListener('load', typeWriter);
+
+// Theme Toggle
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = themeToggle.querySelector('i');
+
+// Check for saved theme or prefer-color-scheme
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme === 'light' || (!currentTheme && !prefersDarkScheme.matches)) {
+    document.documentElement.setAttribute('data-theme', 'light');
+    themeIcon.className = 'fas fa-sun';
+}
+
+themeToggle.addEventListener('click', () => {
+    let theme = 'dark';
+    if (document.documentElement.getAttribute('data-theme') === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        themeIcon.className = 'fas fa-sun';
+        theme = 'light';
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeIcon.className = 'fas fa-moon';
+        theme = 'dark';
+    }
+    localStorage.setItem('theme', theme);
+});
+
+// Scroll Progress Bar
+const progressBar = document.getElementById('progressBar');
+
+window.addEventListener('scroll', () => {
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.scrollY / windowHeight) * 100;
+    progressBar.style.width = scrolled + '%';
+});
+
+// Scroll to Top Button
+const scrollTopBtn = document.createElement('div');
+scrollTopBtn.className = 'scroll-top';
+scrollTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+document.body.appendChild(scrollTopBtn);
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('visible');
+    } else {
+        scrollTopBtn.classList.remove('visible');
+    }
+});
+
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Intersection Observer for animations
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+// Observe all sections
+document.querySelectorAll('.section').forEach(section => {
+    observer.observe(section);
+});
+
+// Animate skill bars when visible
+const skillsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const skillBars = entry.target.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 300);
+            });
+        }
+    });
+}, observerOptions);
+
+const skillsSection = document.querySelector('.skills-section');
+if (skillsSection) {
+    skillsObserver.observe(skillsSection);
+}
+
+// Add the rest of your existing JavaScript code here...
+// (Navigation, form submission, stats animation, etc.)
