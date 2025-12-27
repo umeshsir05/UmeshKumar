@@ -3,150 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experience | EduPortfolio</title>
+    <title>Umesh Banjare | Experience</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
+    <header>
+        <nav class="navbar">
             <div class="logo">
-                <i class="fas fa-graduation-cap"></i>
-                EduPortfolio
+                <a href="index.html">Umesh<span>Banjare</span></a>
             </div>
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="nav-menu" id="navMenu">
+            <div class="nav-links">
                 <ul>
-                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="about.html" class="nav-link"><i class="fas fa-user"></i> About</a></li>
-                    <li><a href="education.html" class="nav-link"><i class="fas fa-book"></i> Education</a></li>
-                    <li><a href="skills.html" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
-                    <li><a href="projects.html" class="nav-link"><i class="fas fa-project-diagram"></i> Projects</a></li>
-                    <li><a href="experience.html" class="nav-link active"><i class="fas fa-briefcase"></i> Experience</a></li>
-                    <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+                    <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    <li><a href="experience.html" class="active"><i class="fas fa-briefcase"></i> Experience</a></li>
                 </ul>
             </div>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                <li><a href="experience.html" class="active"><i class="fas fa-briefcase"></i> Experience</a></li>
+            </ul>
         </div>
-    </nav>
+    </header>
 
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Experience Section -->
-        <section id="experience" class="section experience-section">
-            <h2 class="section-title">
-                <i class="fas fa-briefcase"></i>
-                Experience & Activities
-            </h2>
-            <div class="experience-container">
-                <div class="experience-timeline">
-                    <!-- Experience 1 -->
-                    <div class="experience-item">
-                        <div class="experience-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="experience-content">
-                            <span class="experience-period">June 2023 - Present</span>
-                            <h3 class="experience-role">Web Development Intern</h3>
-                            <div class="experience-company">
-                                <i class="fas fa-building"></i>
-                                TechSolutions Pvt. Ltd.
+    <main>
+        <section class="experience-hero">
+            <div class="container">
+                <h1 class="page-title">Professional Experience</h1>
+                <p class="page-subtitle">Here is an overview of my teaching and professional experiences</p>
+            </div>
+        </section>
+
+        <section class="experience-timeline">
+            <div class="container">
+                <h2 class="section-title">Career Journey</h2>
+                
+                <div class="timeline">
+                    <!-- Current Role -->
+                    <div class="timeline-item current">
+                        <div class="timeline-date">Present</div>
+                        <div class="timeline-content">
+                            <div class="experience-header">
+                                <h3>IT Teacher (Current)</h3>
+                                <span class="badge current-badge">Current Position</span>
                             </div>
-                            <p class="experience-description">
-                                Developing responsive web applications using modern frameworks.
-                                Collaborating with senior developers on client projects and 
-                                implementing new features.
-                            </p>
-                            <div class="experience-tech">
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">MongoDB</span>
-                                <span class="tech-tag">Git</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Experience 2 -->
-                    <div class="experience-item">
-                        <div class="experience-icon">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                        </div>
-                        <div class="experience-content">
-                            <span class="experience-period">Jan 2023 - May 2023</span>
-                            <h3 class="experience-role">Programming Tutor</h3>
-                            <div class="experience-company">
-                                <i class="fas fa-university"></i>
-                                University Coding Club
-                            </div>
-                            <p class="experience-description">
-                                Conducted weekly programming workshops for beginners.
-                                Assisted students with coding assignments and projects.
-                                Created learning materials and coding challenges.
-                            </p>
-                            <div class="experience-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Java</span>
-                                <span class="tech-tag">C++</span>
-                                <span class="tech-tag">Algorithms</span>
+                            <h4>IT Teacher for Class 9th and 10th (CBSE)</h4>
+                            <div class="experience-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Role:</span>
+                                    <span class="detail-value">Teaching IT 402 to Class 9th and 10th students, focusing on modern digital skills.</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Focus Areas:</span>
+                                    <span class="detail-value">Digital literacy, programming fundamentals, computer applications</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Key Responsibilities:</span>
+                                    <span class="detail-value">Curriculum development, student assessment, practical lab sessions</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Experience 3 -->
-                    <div class="experience-item">
-                        <div class="experience-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="experience-content">
-                            <span class="experience-period">Aug 2022 - Present</span>
-                            <h3 class="experience-role">GDSC Lead</h3>
-                            <div class="experience-company">
-                                <i class="fab fa-google"></i>
-                                Google Developer Student Clubs
+                    <!-- SMLD College -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">3 Years</div>
+                        <div class="timeline-content">
+                            <h3>SMLD College, Sheorirayan</h3>
+                            <h4>Assistant Professor</h4>
+                            <div class="experience-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Duration:</span>
+                                    <span class="detail-value">3 Years</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Role:</span>
+                                    <span class="detail-value">Taught undergraduate IT courses and supervised academic projects.</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Subjects Taught:</span>
+                                    <span class="detail-value">Programming languages, Database management, Web technologies</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Key Achievements:</span>
+                                    <span class="detail-value">Mentored multiple student projects, developed new course materials</span>
+                                </div>
                             </div>
-                            <p class="experience-description">
-                                Leading a community of 500+ student developers.
-                                Organizing technical workshops, hackathons, and speaker sessions.
-                                Mentoring students in web and mobile development.
-                            </p>
-                            <div class="experience-tech">
-                                <span class="tech-tag">Community</span>
-                                <span class="tech-tag">Events</span>
-                                <span class="tech-tag">Mentoring</span>
-                                <span class="tech-tag">Leadership</span>
+                        </div>
+                    </div>
+                    
+                    <!-- GLD Public School -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">4 Years</div>
+                        <div class="timeline-content">
+                            <h3>GLD Public School, Khairtal</h3>
+                            <h4>IT Teacher</h4>
+                            <div class="experience-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Duration:</span>
+                                    <span class="detail-value">4 Years</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Role:</span>
+                                    <span class="detail-value">Delivered foundational IT courses, programming, and digital literacy skills.</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Grade Levels:</span>
+                                    <span class="detail-value">Middle school to high school students</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Curriculum:</span>
+                                    <span class="detail-value">Basic computer operations, MS Office, Internet basics, Programming fundamentals</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Government Laxmaneshwar College -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">1 Year</div>
+                        <div class="timeline-content">
+                            <h3>Government Laxmaneshwar College, Kharod</h3>
+                            <h4>Lecturer</h4>
+                            <div class="experience-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Duration:</span>
+                                    <span class="detail-value">1 Year</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Role:</span>
+                                    <span class="detail-value">Taught IT and guided students in practical applications of technology.</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Focus:</span>
+                                    <span class="detail-value">Practical IT skills, software applications, technology integration</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Student Projects:</span>
+                                    <span class="detail-value">Guided students in real-world technology applications and projects</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <i class="fas fa-graduation-cap"></i>
-                EduPortfolio
+        <section class="experience-summary">
+            <div class="container">
+                <div class="summary-card">
+                    <h2><i class="fas fa-chart-line"></i> Professional Summary</h2>
+                    <div class="summary-content">
+                        <div class="summary-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">8+</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">4</div>
+                                <div class="stat-label">Institutions</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">1000+</div>
+                                <div class="stat-label">Students Taught</div>
+                            </div>
+                        </div>
+                        <div class="summary-text">
+                            <p>With over 8 years of cumulative teaching experience across various educational institutions, I have developed expertise in IT education at multiple levels - from school to college.</p>
+                            <p>My journey reflects a consistent focus on technology education, starting from college-level teaching to specializing in school-level IT curriculum development and implementation.</p>
+                            <p>Currently, I am focused on teaching CBSE IT curriculum to 9th and 10th standard students, helping them develop essential digital skills for the modern world.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="footer-text">
-                "Education is the most powerful weapon which you can use to change the world."
-                <br>- Nelson Mandela
-            </p>
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="education.html">Education</a>
-                <a href="projects.html">Projects</a>
-                <a href="contact.html">Contact</a>
+        </section>
+
+        <section class="skills-highlight">
+            <div class="container">
+                <h2 class="section-title">Key Teaching Competencies</h2>
+                <div class="competencies-grid">
+                    <div class="competency-card">
+                        <div class="competency-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>IT Curriculum Development</h3>
+                        <p>Designing and implementing IT curriculum for different educational levels</p>
+                    </div>
+                    
+                    <div class="competency-card">
+                        <div class="competency-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3>Classroom Instruction</h3>
+                        <p>Effective teaching methodologies for technology subjects</p>
+                    </div>
+                    
+                    <div class="competency-card">
+                        <div class="competency-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3>Project Guidance</h3>
+                        <p>Mentoring students in practical projects and applications</p>
+                    </div>
+                    
+                    <div class="competency-card">
+                        <div class="competency-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3>Student Assessment</h3>
+                        <p>Comprehensive evaluation of student learning and progress</p>
+                    </div>
+                </div>
             </div>
-            <p class="footer-copyright">
-                © 2024 EduPortfolio. All rights reserved. 
-                Made with <i class="fas fa-heart"></i> by Raj Sharma
-            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Umesh Banjare. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
         </div>
     </footer>
 
