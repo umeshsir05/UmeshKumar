@@ -22,13 +22,31 @@
             --gray: #95a5a6;
             --shadow: 0 5px 15px rgba(0,0,0,0.1);
             --transition: all 0.3s ease;
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+            --card-bg: white;
+            --header-bg: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+        }
+
+        /* Dark Mode Variables */
+        .dark-mode {
+            --primary: #3498db;
+            --secondary: #2ecc71;
+            --light: #2c3e50;
+            --dark: #121a24;
+            --bg-color: #121212;
+            --text-color: #f0f0f0;
+            --card-bg: #1e1e1e;
+            --header-bg: linear-gradient(135deg, #121a24 0%, #1a252f 100%);
+            --shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: var(--transition);
         }
 
         .container {
@@ -37,16 +55,119 @@
             padding: 0 20px;
         }
 
+        /* Navigation */
+        .navbar {
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 5px;
+        }
+
+        .nav-menu ul {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .nav-link i {
+            font-size: 1rem;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .theme-toggle {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-left: 15px;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
+
         /* Header Styles */
         .profile-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            background: var(--header-bg);
             color: white;
-            padding: 40px 0;
+            padding: 100px 0 40px;
             text-align: center;
             border-bottom-left-radius: 30px;
             border-bottom-right-radius: 30px;
             box-shadow: var(--shadow);
             margin-bottom: 40px;
+            margin-top: 70px;
         }
 
         .profile-photo {
@@ -57,6 +178,14 @@
             object-fit: cover;
             margin-bottom: 20px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
         }
 
         .profile-name {
@@ -93,10 +222,11 @@
         .main-content {
             flex: 2;
             min-width: 300px;
-            background: white;
+            background: var(--card-bg);
             padding: 30px;
             border-radius: 15px;
             box-shadow: var(--shadow);
+            transition: var(--transition);
         }
 
         .sidebar {
@@ -121,27 +251,29 @@
         .section-content p {
             margin-bottom: 20px;
             font-size: 1.05rem;
-            color: #555;
+            color: var(--text-color);
             line-height: 1.8;
+            opacity: 0.9;
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: linear-gradient(135deg, var(--light) 0%, var(--dark) 100%);
             border-left: 5px solid var(--secondary);
             padding: 20px;
             border-radius: 0 10px 10px 0;
             margin: 25px 0;
+            color: white;
         }
 
         .highlight-box h3 {
-            color: var(--primary);
+            color: white;
             margin-bottom: 10px;
             font-size: 1.3rem;
         }
 
         /* Info Cards */
         .info-card {
-            background: white;
+            background: var(--card-bg);
             padding: 25px;
             border-radius: 15px;
             box-shadow: var(--shadow);
@@ -187,6 +319,8 @@
             margin-bottom: 12px;
             padding-left: 25px;
             position: relative;
+            color: var(--text-color);
+            opacity: 0.9;
         }
 
         .skills-list li:before {
@@ -211,7 +345,7 @@
         .contact-icon {
             width: 40px;
             height: 40px;
-            background: #f1f8ff;
+            background: var(--light);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -233,9 +367,14 @@
             min-width: 120px;
             text-align: center;
             padding: 20px 15px;
-            background: white;
+            background: var(--card-bg);
             border-radius: 10px;
             box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-3px);
         }
 
         .stat-number {
@@ -310,8 +449,53 @@
             margin-top: 20px;
         }
 
-        /* Responsive */
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .nav-menu ul {
+                gap: 3px;
+            }
+            
+            .nav-link {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+        }
+
         @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                background: var(--card-bg);
+                box-shadow: var(--shadow);
+                padding: 20px;
+                transition: 0.3s;
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-link {
+                padding: 12px 15px;
+                justify-content: flex-start;
+            }
+
+            .nav-container {
+                padding: 15px;
+            }
+
             .profile-name {
                 font-size: 2.2rem;
             }
@@ -333,6 +517,7 @@
             .profile-photo {
                 width: 150px;
                 height: 150px;
+                font-size: 3rem;
             }
             
             .profile-name {
@@ -342,17 +527,52 @@
             .stat-item {
                 min-width: 100%;
             }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .main-content, .info-card {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Profile Header -->
-    <header class="profile-header">
-        <div class="container">
-            <!-- Placeholder for profile photo - using initials as fallback -->
-            <div class="profile-photo" style="background: linear-gradient(135deg, #3498db, #2ecc71); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem; font-weight: bold; margin: 0 auto 20px;">
-                UB
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                EduPortfolio
             </div>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+                    <li><a href="#education" class="nav-link"><i class="fas fa-book"></i> Education</a></li>
+                    <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i> Skills</a></li>
+                    <li><a href="#projects" class="nav-link"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                    <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="profile-header" id="home">
+        <div class="container">
+            <div class="profile-photo">UB</div>
             <h1 class="profile-name">Umesh Banjare</h1>
             <h2 class="profile-title">Educator & Web Developer</h2>
             <p class="tagline">
@@ -362,9 +582,8 @@
     </header>
 
     <div class="container">
-        <!-- Content Section -->
-        <div class="content-section">
-            <!-- Main Content -->
+        <!-- About Section -->
+        <section id="about" class="content-section">
             <div class="main-content">
                 <h2 class="section-title">About Me</h2>
                 <div class="section-content">
@@ -385,14 +604,7 @@
                     <p>
                         With extensive experience in both IT and education sectors, I've developed a unique 
                         perspective that allows me to bridge the gap between technical implementation and 
-                        effective knowledge transfer. My work focuses on creating user-friendly educational 
-                        platforms and resources that make learning more interactive and enjoyable.
-                    </p>
-                    
-                    <p>
-                        I'm constantly exploring new technologies and methodologies to enhance both my 
-                        development skills and teaching approaches. This continuous learning journey allows 
-                        me to stay current in the fast-evolving fields of education and web development.
+                        effective knowledge transfer.
                     </p>
                 </div>
 
@@ -400,20 +612,20 @@
                 <h2 class="section-title">Quick Stats</h2>
                 <div class="stats-container">
                     <div class="stat-item">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Years Experience</div>
+                        <div class="stat-number">4.0</div>
+                        <div class="stat-label">GPA Score</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">1000+</div>
-                        <div class="stat-label">Students Taught</div>
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Projects</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">15+</div>
-                        <div class="stat-label">Technologies</div>
+                        <div class="stat-label">Certificates</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label">Learning Hours</div>
                     </div>
                 </div>
             </div>
@@ -421,7 +633,7 @@
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Skills Card -->
-                <div class="info-card">
+                <div class="info-card" id="skills">
                     <div class="card-header">
                         <div class="card-icon">
                             <i class="fas fa-code"></i>
@@ -436,12 +648,11 @@
                         <li>Responsive Web Design</li>
                         <li>UI/UX Design Principles</li>
                         <li>Version Control (Git, GitHub)</li>
-                        <li>Educational Technology Tools</li>
                     </ul>
                 </div>
 
                 <!-- Education Card -->
-                <div class="info-card">
+                <div class="info-card" id="education">
                     <div class="card-header">
                         <div class="card-icon">
                             <i class="fas fa-graduation-cap"></i>
@@ -455,13 +666,11 @@
                         <li>Student Assessment</li>
                         <li>Interactive Learning Tools</li>
                         <li>Educational Content Creation</li>
-                        <li>Teacher Training</li>
-                        <li>Learning Management Systems</li>
                     </ul>
                 </div>
 
                 <!-- Contact Card -->
-                <div class="info-card">
+                <div class="info-card" id="contact">
                     <div class="card-header">
                         <div class="card-icon">
                             <i class="fas fa-envelope"></i>
@@ -490,7 +699,60 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="main-content" style="margin-bottom: 40px;">
+            <h2 class="section-title">Projects & Experience</h2>
+            <div class="section-content">
+                <p>
+                    I have worked on numerous educational technology projects and web development initiatives. 
+                    My experience spans from creating interactive learning platforms to developing responsive 
+                    web applications for educational institutions.
+                </p>
+                
+                <div class="highlight-box">
+                    <h3>Recent Projects</h3>
+                    <p>
+                        • E-Learning Platform Development<br>
+                        • Student Portfolio Management System<br>
+                        • Interactive Coding Tutorials<br>
+                        • Educational Content Management System<br>
+                        • Responsive Educational Websites
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="main-content" style="margin-bottom: 40px;">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="section-content">
+                <p>
+                    With years of experience in both education and IT sectors, I have developed expertise in:
+                </p>
+                
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Years in Education</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4+</div>
+                        <div class="stat-label">Years in Web Dev</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">IT Experience</div>
+                    </div>
+                </div>
+                
+                <p>
+                    I combine my technical skills with pedagogical knowledge to create effective digital 
+                    learning solutions that enhance student engagement and learning outcomes.
+                </p>
+            </div>
+        </section>
     </div>
 
     <!-- Footer -->
@@ -498,11 +760,11 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <i class="fas fa-graduation-cap"></i> Umesh Banjare
+                    <i class="fas fa-graduation-cap"></i> EduPortfolio
                 </div>
                 <p class="footer-quote">
-                    "Education is not the learning of facts, but the training of the mind to think."
-                    <br>- Albert Einstein
+                    "Education is the most powerful weapon which you can use to change the world."
+                    <br>- Nelson Mandela
                 </p>
                 <div class="social-links">
                     <a href="#" class="social-link">
@@ -519,40 +781,150 @@
                     </a>
                 </div>
                 <p class="copyright">
-                    © 2024 Umesh Banjare. All rights reserved. 
-                    <br>Educator & Web Developer Portfolio
+                    © 2024 EduPortfolio. All rights reserved. 
+                    <br>Made with <i class="fas fa-heart" style="color: #e74c3c;"></i> by Umesh Banjare
                 </p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Simple animation for stats
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add hover effect to info cards
-            const cards = document.querySelectorAll('.info-card');
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-5px)';
-                });
+        // Toggle Menu
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
                 
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
+                // Update active link
+                document.querySelectorAll('.nav-link').forEach(item => {
+                    item.classList.remove('active');
                 });
-            });
-            
-            // Animate social links on hover
-            const socialLinks = document.querySelectorAll('.social-link');
-            socialLinks.forEach(link => {
-                link.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-3px)';
-                });
-                
-                link.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                });
+                link.classList.add('active');
             });
         });
+
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Check for saved theme or prefer-color-scheme
+        const savedTheme = localStorage.getItem('theme') || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Update active link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target) && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // Animate stats on scroll
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const originalText = stat.textContent;
+                        stat.textContent = '0';
+                        
+                        let count = 0;
+                        const target = parseInt(originalText.replace('+', ''));
+                        const increment = target / 50;
+                        
+                        const timer = setInterval(() => {
+                            count += increment;
+                            if (count >= target) {
+                                count = target;
+                                clearInterval(timer);
+                            }
+                            stat.textContent = originalText.includes('+') 
+                                ? Math.floor(count) + '+' 
+                                : count.toFixed(1);
+                        }, 30);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe stats container
+        const statsContainer = document.querySelector('.stats-container');
+        if (statsContainer) {
+            observer.observe(statsContainer);
+        }
     </script>
 </body>
 </html>
