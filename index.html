@@ -32,10 +32,6 @@
                     <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </div>
-            
-            <button class="theme-toggle" id="themeToggle">
-                <i class="fas fa-moon"></i>
-            </button>
         </div>
     </nav>
 
@@ -103,7 +99,7 @@
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Skills Card -->
-                <div class="info-card" id="skills">
+                <div class="info-card">
                     <div class="card-header">
                         <div class="card-icon">
                             <i class="fas fa-code"></i>
@@ -122,7 +118,7 @@
                 </div>
 
                 <!-- Education Card -->
-                <div class="info-card" id="education">
+                <div class="info-card">
                     <div class="card-header">
                         <div class="card-icon">
                             <i class="fas fa-graduation-cap"></i>
@@ -140,7 +136,7 @@
                 </div>
 
                 <!-- Contact Card -->
-                <div class="info-card" id="contact">
+                <div class="info-card">
                     <div class="card-header">
                         <div class="card-icon">
                             <i class="fas fa-envelope"></i>
@@ -171,8 +167,91 @@
             </div>
         </section>
 
+        <!-- Skills Section -->
+        <section id="skills" class="main-content section-margin">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="section-content">
+                <p>
+                    I have a comprehensive skill set in both web development and educational technology. 
+                    My technical expertise allows me to create robust, scalable solutions for educational purposes.
+                </p>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-laptop-code"></i> Frontend Development</h3>
+                        <ul class="skills-list">
+                            <li>HTML5, CSS3, JavaScript (ES6+)</li>
+                            <li>React.js & Vue.js Frameworks</li>
+                            <li>Responsive Web Design</li>
+                            <li>Bootstrap, Tailwind CSS</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-server"></i> Backend Development</h3>
+                        <ul class="skills-list">
+                            <li>Node.js & Express.js</li>
+                            <li>PHP & Laravel</li>
+                            <li>RESTful API Development</li>
+                            <li>Database Design & Management</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-chalkboard-teacher"></i> Education Technology</h3>
+                        <ul class="skills-list">
+                            <li>Learning Management Systems</li>
+                            <li>E-Learning Platform Development</li>
+                            <li>Interactive Content Creation</li>
+                            <li>Educational App Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="main-content section-margin">
+            <h2 class="section-title">Education & Qualifications</h2>
+            <div class="section-content">
+                <p>
+                    My educational background combines technical expertise with pedagogical knowledge, 
+                    allowing me to create effective learning solutions.
+                </p>
+                
+                <div class="education-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2020 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Master's in Computer Science</h3>
+                            <p class="timeline-institution">University of Technology</p>
+                            <p>Specialized in Educational Technology and Web Development</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2016 - 2020</div>
+                        <div class="timeline-content">
+                            <h3>Bachelor's in Information Technology</h3>
+                            <p class="timeline-institution">State Technical University</p>
+                            <p>Focus on Software Development and Database Management</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2018</div>
+                        <div class="timeline-content">
+                            <h3>Teaching Certification</h3>
+                            <p class="timeline-institution">National Board of Education</p>
+                            <p>Certified Educator with focus on Technology Integration</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Projects Section -->
-        <section id="projects" class="main-content" style="margin-bottom: 40px;">
+        <section id="projects" class="main-content section-margin">
             <h2 class="section-title">Projects & Experience</h2>
             <div class="section-content">
                 <p>
@@ -181,21 +260,36 @@
                     web applications for educational institutions.
                 </p>
                 
-                <div class="highlight-box">
-                    <h3>Recent Projects</h3>
-                    <p>
-                        • E-Learning Platform Development<br>
-                        • Student Portfolio Management System<br>
-                        • Interactive Coding Tutorials<br>
-                        • Educational Content Management System<br>
-                        • Responsive Educational Websites
-                    </p>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-laptop-house"></i>
+                        </div>
+                        <h3>E-Learning Platform</h3>
+                        <p>A comprehensive online learning platform with interactive courses, quizzes, and progress tracking.</p>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Student Portfolio System</h3>
+                        <p>Digital portfolio system for students to showcase their projects and achievements.</p>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Coding Tutorial Platform</h3>
+                        <p>Interactive coding tutorials with live code editor and instant feedback.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="main-content" style="margin-bottom: 40px;">
+        <section id="experience" class="main-content section-margin">
             <h2 class="section-title">Professional Experience</h2>
             <div class="section-content">
                 <p>
@@ -215,14 +309,90 @@
                         <div class="stat-number">3+</div>
                         <div class="stat-label">IT Experience</div>
                     </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
                 </div>
                 
-                <p>
-                    I combine my technical skills with pedagogical knowledge to create effective digital 
-                    learning solutions that enhance student engagement and learning outcomes.
-                </p>
+                <div class="experience-timeline">
+                    <div class="experience-item">
+                        <h3>Senior Web Developer & Educator</h3>
+                        <p class="experience-period">2020 - Present</p>
+                        <p>Developing educational platforms and teaching web development courses to university students.</p>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <h3>IT Trainer & Consultant</h3>
+                        <p class="experience-period">2018 - 2020</p>
+                        <p>Providing IT training and consulting services to educational institutions.</p>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <h3>Web Developer</h3>
+                        <p class="experience-period">2016 - 2018</p>
+                        <p>Developing websites and web applications for various clients.</p>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="main-content section-margin">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="section-content">
+                <p>
+                    Interested in collaborating on educational technology projects or need web development services? 
+                    Feel free to reach out!
+                </p>
+                
+                <div class="contact-grid">
+                    <div class="contact-method">
+                        <div class="contact-method-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>umesh.banjare@example.com</p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-method-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <p>+91 98765 43210</p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-method-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Location</h3>
+                        <p>India</p>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Dark Mode Toggle at Bottom -->
+    <div class="dark-mode-toggle-container">
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i> Dark Mode
+        </button>
     </div>
 
     <!-- Footer -->
@@ -250,9 +420,16 @@
                         <i class="fab fa-youtube"></i>
                     </a>
                 </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#education">Education</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
                 <p class="copyright">
                     © 2024 EduPortfolio. All rights reserved. 
-                    <br>Made with <i class="fas fa-heart" style="color: #e74c3c;"></i> by Umesh Banjare
+                    <br>Made with <i class="fas fa-heart"></i> by Umesh Banjare
                 </p>
             </div>
         </div>
